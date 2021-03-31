@@ -23,7 +23,7 @@ public:
 
 	sf::Sprite help;
 
-	int tileType = 4;
+	int tileType = 7;
 
 	Grid grid;
 	Car car;

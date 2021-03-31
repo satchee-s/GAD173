@@ -53,22 +53,7 @@ void Grid::GridMap()
 	}
 }
 
-void Grid::Button()
-{
-}
 
-/*void Grid::Update(sf::RenderWindow& window)
-{
-	sf::Vector2i pos = sf::Mouse::getPosition(window);
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-	{
-		int posX = (pos.x - 65 - X_OFFSET) / CELL_WIDTH;
-		int posY = (pos.y - 65 - Y_OFFSET) / CELL_HEIGHT;
-		int gridSquare = posX + posY * 10;
-		if (gridSquare < 100)
-			map[gridSquare] = example.tileType;
-	}
-}*/
 
 void Grid::Render(sf::RenderWindow& window)
 {

@@ -40,22 +40,20 @@ void Example::update(float deltaT)
 	{ 
 		m_running = false;
 	}
-	if (ImGui::ImageButton(*tile1, sf::Vector2f(65, 65)));
+	if (ImGui::ImageButton(*tile1, sf::Vector2f(65, 65)))
 	{
 		tileType = 0;
 	}
-	if (ImGui::ImageButton(*tile2, sf::Vector2f(65, 65)));
+	else if (ImGui::ImageButton(*tile2, sf::Vector2f(65, 65)))
 	{
 		tileType = 1;
-
 	}
-	if (ImGui::ImageButton(*tile3, sf::Vector2f(65, 65)));
+	else if (ImGui::ImageButton(*tile3, sf::Vector2f(65, 65)))
 	{
 		tileType = 2;
-
 	}
-	ImGui::End();
 	TileButton();
+	ImGui::End();
 	grid.GridMap();
 
 }
@@ -78,7 +76,7 @@ void Example::render()
 	m_window.draw(*m_backgroundSprite);
 	grid.Render(m_window);
 	m_window.draw(help);
-	//car.draw(m_window);
+	car.draw(m_window);
 
 }
 

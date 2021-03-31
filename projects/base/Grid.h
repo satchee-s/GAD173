@@ -21,8 +21,6 @@ public:
 	sf::RectangleShape lineVert[ARRAY_SIZE];
 	void Render(sf::RenderWindow& window);
 	void GridMap();
-	void Button();
-	void Update(sf::RenderWindow& window);
 
 	sf::Texture *holo;
 	sf::Texture *blue;
@@ -41,7 +39,7 @@ public:
 		0,1,1,0,0,0,2,1,0,2,
 		0,1,1,2,0,1,2,1,0,0
 	};
-	//0 = ship, 1= fireball, 2 = rock
+	//0 = holographic tile, 1= blue, 2 = green
 	sf::Sprite tiles[100];
 
 };
