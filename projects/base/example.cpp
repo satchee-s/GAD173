@@ -23,7 +23,6 @@ bool Example::start()
 	tile1 = kage::TextureManager::getTexture("data/holo.jpg");
 	tile2 = kage::TextureManager::getTexture("data/blue.jpg");
 	tile3 = kage::TextureManager::getTexture("data/green.jpg");
-	car.load();
 	return true;
 }
 
@@ -54,8 +53,7 @@ void Example::update(float deltaT)
 	}
 	TileButton();
 	ImGui::End();
-	grid.GridMap();
-
+	map.DrawMap();
 }
 
 void Example::TileButton()
@@ -63,21 +61,24 @@ void Example::TileButton()
 	sf::Vector2i pos = sf::Mouse::getPosition(m_window);
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
-		int posX = (pos.x - 65 - X_OFFSET) / CELL_WIDTH;
-		int posY = (pos.y - 65 - Y_OFFSET) / CELL_HEIGHT;
-		int gridSquare = posX + posY * 10;
-		if (gridSquare < 100)
-			grid.map[gridSquare] = tileType;
+		int posX = (pos.x - CELL_HEIGHT - X_OFFSET) / CELL_WIDTH;
+		int posY = (pos.y - CELL_WIDTH - Y_OFFSET) / CELL_HEIGHT;
+		int square = posX + posY * 10;
+		bool gridPosX = pos.x >= (X_OFFSET + CELL_HEIGHT) &&
+			pos.x <= (X_OFFSET + CELL_HEIGHT + CELL_HEIGHT * HORZ_CELL_COUNT);
+		bool gridPosY = pos.y >= (Y_OFFSET + CELL_WIDTH) &&
+			pos.y <= (Y_OFFSET + CELL_WIDTH + CELL_WIDTH * VERT_CELL_COUNT);
+		if (square < 100 && gridPosX == true && gridPosY == true)
+			map.map[square] = tileType;
 	}
+
 }
 
 void Example::render()
 {
 	m_window.draw(*m_backgroundSprite);
 	grid.Render(m_window);
-	m_window.draw(help);
-	car.draw(m_window);
-
+	map.Render(m_window);
 }
 
 void Example::cleanup()

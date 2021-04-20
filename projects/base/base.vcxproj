@@ -98,13 +98,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="app.h" />
-    <ClInclude Include="Car.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="example.h" />
     <ClInclude Include="Grid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />
-    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="dependencies.cpp" />
     <ClCompile Include="example.cpp" />
     <ClCompile Include="Grid.cpp" />

@@ -1,7 +1,7 @@
 #pragma once
 #include "Grid.h"
 #include "app.h"
-#include "Car.h"
+#include "Map.h"
 #include <iostream>
 
 class Example : public App
@@ -26,7 +26,7 @@ public:
 	int tileType = 7;
 
 	Grid grid;
-	Car car;
+	Map map;
 
 	sf::Sprite *m_backgroundSprite;
 };
