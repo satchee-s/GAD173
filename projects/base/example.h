@@ -1,8 +1,7 @@
 #pragma once
 #include "Grid.h"
 #include "app.h"
-#include "Map.h"
-#include "Load.h"
+#include "Car.h"
 #include <iostream>
 
 class Example : public App
@@ -22,10 +21,12 @@ public:
 	sf::Texture* tile2;
 	sf::Texture* tile3;
 
+	sf::Sprite help;
+
 	int tileType = 7;
 
 	Grid grid;
-	Map map;
+	Car car;
 
 	sf::Sprite *m_backgroundSprite;
 };

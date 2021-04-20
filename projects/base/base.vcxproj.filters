@@ -30,10 +30,7 @@
     <ClCompile Include="Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Load.cpp">
+    <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,10 +44,7 @@
     <ClInclude Include="Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Load.h">
+    <ClInclude Include="Car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

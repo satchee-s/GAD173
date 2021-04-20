@@ -1,6 +1,6 @@
 #include "example.h"
 
-Example::Example(): App(), map(), grid()
+Example::Example(): App()
 {
 }
 
@@ -23,6 +23,7 @@ bool Example::start()
 	tile1 = kage::TextureManager::getTexture("data/holo.jpg");
 	tile2 = kage::TextureManager::getTexture("data/blue.jpg");
 	tile3 = kage::TextureManager::getTexture("data/green.jpg");
+	car.load();
 	return true;
 }
 
@@ -39,10 +40,6 @@ void Example::update(float deltaT)
 	{ 
 		m_running = false;
 	}
-	if (ImGui::Button("Save File"))
-	{
-		Load::SaveFile("Grid map.txt", map.map, 100);
-	}
 	if (ImGui::ImageButton(*tile1, sf::Vector2f(65, 65)))
 	{
 		tileType = 0;
@@ -55,9 +52,10 @@ void Example::update(float deltaT)
 	{
 		tileType = 2;
 	}
-	map.DrawMap();
 	TileButton();
 	ImGui::End();
+	grid.GridMap();
+
 }
 
 void Example::TileButton()
@@ -65,16 +63,11 @@ void Example::TileButton()
 	sf::Vector2i pos = sf::Mouse::getPosition(m_window);
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
-		int posX = (pos.x - CELL_HEIGHT - X_OFFSET) / CELL_WIDTH;
-		int posY = (pos.y - CELL_WIDTH - Y_OFFSET) / CELL_HEIGHT;
-		int square = posX + posY * 10;
-		bool gridPosX = pos.x >= (X_OFFSET + CELL_HEIGHT) && 
-						pos.x<= (X_OFFSET + CELL_HEIGHT + CELL_HEIGHT*HORZ_CELL_COUNT);
-		bool gridPosY = pos.y >= (Y_OFFSET+ CELL_WIDTH) && 
-						pos.y <= (Y_OFFSET + CELL_WIDTH + CELL_WIDTH * VERT_CELL_COUNT);
-		if (square < 100 && gridPosX == true && gridPosY == true)
-			map.map[square] = tileType;
-		
+		int posX = (pos.x - 65 - X_OFFSET) / CELL_WIDTH;
+		int posY = (pos.y - 65 - Y_OFFSET) / CELL_HEIGHT;
+		int gridSquare = posX + posY * 10;
+		if (gridSquare < 100)
+			grid.map[gridSquare] = tileType;
 	}
 }
 
@@ -82,7 +75,8 @@ void Example::render()
 {
 	m_window.draw(*m_backgroundSprite);
 	grid.Render(m_window);
-	map.Render(m_window);
+	m_window.draw(help);
+	car.draw(m_window);
 
 }
 
