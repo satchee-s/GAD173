@@ -2,6 +2,7 @@
 #include "Grid.h"
 #include "app.h"
 #include "Map.h"
+#include "Load.h"
 #include <iostream>
 
 class Example : public App

@@ -1,6 +1,6 @@
 #include "example.h"
 
-Example::Example(): App()
+Example::Example(): App(), grid()
 {
 }
 
@@ -38,6 +38,14 @@ void Example::update(float deltaT)
 	if(ImGui::Button("Exit"))
 	{ 
 		m_running = false;
+	}
+	if (ImGui::Button("Save File"))
+	{
+		Load::SaveFile("GridMap.txt", map.map, 100);
+	}
+	if (ImGui::Button("Load File"))
+	{
+		Load::LoadFile("GridMap.txt", map.map);
 	}
 	if (ImGui::ImageButton(*tile1, sf::Vector2f(65, 65)))
 	{
