@@ -3,8 +3,7 @@
 #include "app.h"
 #include "Map.h"
 #include "Load.h"
-#include <iostream>
-
+#include "Animate.h"
 class Example : public App
 {
 public:
@@ -18,16 +17,11 @@ public:
 
 	void TileButton();
 
-	sf::Texture* tile1;
-	sf::Texture* tile2;
-	sf::Texture* tile3;
-
-	sf::Sprite help;
-
 	int tileType = 7;
 
 	Grid grid;
 	Map map;
+	Animate animate;
 
 	sf::Sprite *m_backgroundSprite;
 };

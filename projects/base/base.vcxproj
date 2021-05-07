@@ -97,6 +97,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animate.h" />
     <ClInclude Include="app.h" />
     <ClInclude Include="Load.h" />
     <ClInclude Include="Map.h" />
@@ -104,6 +105,7 @@
     <ClInclude Include="Grid.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animate.cpp" />
     <ClCompile Include="app.cpp" />
     <ClCompile Include="Load.cpp" />
     <ClCompile Include="Map.cpp" />
