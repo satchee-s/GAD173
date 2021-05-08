@@ -16,7 +16,11 @@ void Map::DrawMap()
 	{
 		for (size_t x = 0; x < ARRAY_SIZE; x++)
 		{
-			int square = x + y * 10;
+			int square = x + y * CELL_COUNT;
+			if (square >= TOTAL_CELLS)
+				break;
+
+			std::cout << square << std::endl;
 			if (map[square] == 1)
 			{
 				tiles[square].setTexture(*tileSheet);
@@ -51,7 +55,7 @@ void Map::DrawMap()
 
 void Map::Render(sf::RenderWindow& window)
 {
-	for (size_t i = 0; i < 100; i++)
+	for (size_t i = 0; i < TOTAL_CELLS; i++)
 	{
 		window.draw(tiles[i]);
 	}

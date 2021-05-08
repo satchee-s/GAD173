@@ -20,7 +20,7 @@ bool Example::start()
 	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
-	animate.Load("data/tilesheet.png");
+	animatedSprite.Load();
 	return true;
 }
 
@@ -66,6 +66,7 @@ void Example::update(float deltaT)
 	TileButton();
 	ImGui::End();
 	map.DrawMap();
+	animatedSprite.Update();
 }
 
 void Example::TileButton()
@@ -90,11 +91,10 @@ void Example::render()
 	m_window.draw(*m_backgroundSprite);
 	grid.Render(m_window);
 	map.Render(m_window);
-	animate.Render(m_window);
+	//animatedSprite.Render(m_window);
 }
 
 void Example::cleanup()
 {
-
 }
 

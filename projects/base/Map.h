@@ -12,25 +12,8 @@ public:
 
 	sf::Texture *tileSheet;
 
-	sf::Sprite blue;
-	sf::Sprite purple;
-	sf::Sprite red;
-	sf::Sprite green;
-	sf::Sprite yellow;
+	int map[TOTAL_CELLS];
 
-	int map[100] = {
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-	};
-
-	sf::Sprite tiles[100];
+	sf::Sprite tiles[TOTAL_CELLS];
 };
 

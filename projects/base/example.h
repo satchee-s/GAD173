@@ -3,7 +3,8 @@
 #include "app.h"
 #include "Map.h"
 #include "Load.h"
-#include "Animate.h"
+#include "AnimatedSprite.h"
+
 class Example : public App
 {
 public:
@@ -21,7 +22,9 @@ public:
 
 	Grid grid;
 	Map map;
-	Animate animate;
+
+	AnimatedSprite animatedSprite;
+
 
 	sf::Sprite *m_backgroundSprite;
 };
