@@ -16,15 +16,9 @@ public:
 	virtual void cleanup();
 	static Example &inst();
 
-	void TileButton();
-
-	int tileType = 7;
-
 	Grid grid;
 	Map map;
-
 	AnimatedSprite animatedSprite;
-
 
 	sf::Sprite *m_backgroundSprite;
 };
