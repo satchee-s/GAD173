@@ -8,7 +8,7 @@ Map::~Map()
 {
 }
 
-void Map::DrawMap()
+void Map::DrawMap() //places tiles on the grid and animates them
 {
 	tileSheet = kage::TextureManager::getTexture("data/tilesheet.png");
 	sf::Time timer = clock.getElapsedTime();
@@ -20,7 +20,7 @@ void Map::DrawMap()
 			for (int x = 0; x < ARRAY_SIZE; x++)
 			{
 				int square = x + y * CELL_COUNT;
-				if (square >= TOTAL_CELLS)
+				if (square >= TOTAL_CELLS || map[square] < 1 || map[square] > 5)
 					break;
 				coordinateY = SPRITE_SIZE * (map[square] - 1);
 				tiles[square].setTexture(*tileSheet);

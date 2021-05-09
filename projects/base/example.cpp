@@ -20,7 +20,6 @@ bool Example::start()
 	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
-	animatedSprite.Load();
 	return true;
 }
 
@@ -52,8 +51,8 @@ void Example::update(float deltaT)
 void Example::render()
 {
 	m_window.draw(*m_backgroundSprite);
-	grid.Render(m_window);
 	map.Render(m_window);
+	grid.Render(m_window);
 }
 
 void Example::cleanup()
