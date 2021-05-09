@@ -4,7 +4,7 @@
 
 class Scene
 {
-	bool isRunning = false;
+	
 public:
 	Scene();
 	~Scene();
@@ -12,5 +12,8 @@ public:
 	virtual void Load();
 	virtual void Update();
 	virtual void Render(sf::RenderWindow& window);
+
+	bool isRunning = false;
+	bool isLoaded = false;
 };
 

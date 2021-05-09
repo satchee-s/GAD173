@@ -11,6 +11,8 @@ SceneManager::~SceneManager()
 void SceneManager::LoadScene(int sceneIndex)
 {
 	currentScene = sceneIndex;
+	if (!scenes[currentScene]->isLoaded)
+		scenes[currentScene]->Load();
 }
 
 void SceneManager::AddScene(Scene* scene)

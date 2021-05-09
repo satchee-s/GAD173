@@ -36,7 +36,10 @@
     <ClCompile Include="Scenes\Level1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\MainMenu.cpp">
+    <ClCompile Include="Scenes\Level2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +59,10 @@
     <ClInclude Include="Scenes\Level1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\MainMenu.h">
+    <ClInclude Include="Scenes\Level2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLoad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

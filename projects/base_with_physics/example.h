@@ -16,4 +16,6 @@ public:
 	static Example &inst();
 
 	SceneManager sceneManager;
+	sf::Sprite* m_backgroundSprite;
+
 };

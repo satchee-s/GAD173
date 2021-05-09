@@ -10,6 +10,9 @@ Scene::~Scene()
 
 void Scene::Load()
 {
+	isLoaded = true;
+	isRunning = true;
+	std::cout << "scene was loaded" << std::endl;
 }
 
 void Scene::Update()

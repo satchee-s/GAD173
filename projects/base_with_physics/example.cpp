@@ -1,5 +1,5 @@
 #include "example.h"
-#include "Scenes/MainMenu.h"
+#include "Scenes/Level2.h"
 #include "Scenes/Level1.h"
 
 
@@ -19,8 +19,11 @@ Example &Example::inst()
 
 bool Example::start()
 {
-	sceneManager.AddScene(new MainMenu());
+	m_backgroundSprite = kage::TextureManager::getSprite("data/background.jpg");
+	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
+	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
 	sceneManager.AddScene(new Level1());
+	sceneManager.AddScene(new Level2());
 	return true;
 }
 
@@ -30,20 +33,26 @@ void Example::update(float deltaT)
 	{
 		m_running = false;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
 	{
-		sceneManager.LoadScene(0);
 
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
 	{
-		sceneManager.LoadScene(1);
 
-	}
+	}*/
 	ImGui::Begin("Kage2D");
 	if(ImGui::Button("Exit"))
 	{ 
 		m_running = false;
+	}
+	if (ImGui::Button("Load Level 1") || sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+	{
+		sceneManager.LoadScene(0);
+	}
+	if (ImGui::Button("Load Level 2") || sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+	{
+		sceneManager.LoadScene(1);
 	}
 	ImGui::End();	
 	sceneManager.Update();
@@ -51,6 +60,7 @@ void Example::update(float deltaT)
 
 void Example::render()
 {
+	m_window.draw(*m_backgroundSprite);
 	sceneManager.Render(m_window);
 }
 
